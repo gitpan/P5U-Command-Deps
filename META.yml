@@ -4,7 +4,6 @@ author:
   - 'Toby Inkster <tobyink@cpan.org>'
 build_requires:
   ExtUtils::MakeMaker: 6.59
-  Test::More: 0.61
 configure_requires:
   ExtUtils::MakeMaker: 6.59
 distribution_type: module
@@ -23,6 +22,8 @@ no_index:
     - t
     - xt
 requires:
+  Class::Discover: 0
+  List::MoreUtils: 0
   P5U: 0
   Path::Class::Dir: 0
   Path::Class::File: 0
@@ -34,4 +35,4 @@ resources:
   homepage: https://metacpan.org/release/P5U-Command-Deps
   license: http://dev.perl.org/licenses/
   repository: https://bitbucket.org/tobyink/p5-p5u-command-deps
-version: 0.002
+version: 0.003

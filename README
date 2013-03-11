@@ -23,9 +23,15 @@ DESCRIPTION
     It uses file naming conventions to attempt to classify dependencies as
     "runtime", "test" and "build".
 
-    With the "--skipcore" option, will skip dependencies that are satisfied
-    by Perl core. This requires at least one "use VERSION" line in the files
-    being scanned.
+    Unless using the "--keep-provided" option, will use Class::Discover to
+    discover what packages are provided by the codebase, and skip those. For
+    example, if there's a lib/Foo/Bar.pm providing Foo::Bar, and the test
+    suite loads that module, it won't be included as a test_requires
+    dependency.
+
+    With the "--skip-core" option, will also skip dependencies that are
+    satisfied by Perl core. This requires at least one "use VERSION" line in
+    the files being scanned.
 
     Output is in the text format shown above, but with "--format=mi" will
     attempt to output Module::Install-style requirements. With
@@ -39,7 +45,7 @@ BUGS
 SEE ALSO
     P5U.
 
-    Perl::PrereqScanner, App::PrereqGrapher.
+    Class::Discover, Perl::PrereqScanner, App::PrereqGrapher.
 
 AUTHOR
     Toby Inkster <tobyink@cpan.org>.
