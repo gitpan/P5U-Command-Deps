@@ -35,4 +35,4 @@ resources:
   homepage: https://metacpan.org/release/P5U-Command-Deps
   license: http://dev.perl.org/licenses/
   repository: https://github.com/tobyink/p5-p5u-command-deps
-version: 0.004
+version: 0.005
